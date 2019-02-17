@@ -3,18 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "yarn remove @ll931217/vue-treeview && yarn add ../vue-treeview && vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@ll931217/vue-treeview": "^0.0.2",
+    "@ll931217/vue-treeview": "^0.1.0",
     "node-sass": "^4.11.0",
     "nuxt": "^2.4.3",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^7.1.0",
-    "vue": "^2.6.5"
+    "vue": "^2.6.5",
+    "vue-router": "^3.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.4.0",

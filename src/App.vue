@@ -1,9 +1,14 @@
 <template lang="pug">
   #app
-    h1 Tree View
-    tree-view(:tree="tree")
-    h5 MIT Licensed | Copyright &copy; 2019 Liang-Shih Lin
-      a(href="https://github.com/ll931217/vue-treeview", target="_blank").source Source
+    .header
+      h1 Tree View
+      p A simple treeview component for Vuejs Apps
+    .body
+      tree-view(:tree="tree", :icons="icons")
+      router-view
+    .footer
+      h5 MIT Licensed | Copyright &copy; 2019 Liang-Shih Lin
+        a(href="https://github.com/ll931217/vue-treeview", target="_blank").source Source
 </template>
 
 <script>
@@ -13,7 +18,15 @@ export default {
   name: 'App',
   data () {
     return {
-      tree: Tree
+      tree: Tree,
+      icons: {
+        closed: 'angle-up',
+        opened: 'angle-down',
+        default: {
+          prefix: 'fab',
+          iconName: 'accessible-icon'
+        }
+      }
     }
   }
 }
@@ -37,8 +50,11 @@ body
   color: white
   min-width: 400px
 
-  h1
+  h1, p
     text-align: center
+  
+  h1
+    margin-bottom: 0
 
   h5
     display: flex
@@ -51,4 +67,15 @@ body
         text-decoration: none
       &:hover
         text-decoration: underline
+
+  img
+    height: 300px
+    width: 400px
+    border-radius: 10px
+  
+  .body
+    display: grid
+    grid-template-rows: auto
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 2em
 </style>
