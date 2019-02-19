@@ -4,7 +4,7 @@
       h1 Tree View
       p A simple treeview component for Vuejs Apps
     .body
-      tree-view(:tree.sync="tree", :icons="icons", :editable="true")
+      tree-view(:tree.sync="tree", :editable="true")
       router-view
     .footer
       h5 MIT Licensed | Copyright &copy; 2019 Liang-Shih Lin
@@ -18,15 +18,7 @@ export default {
   name: 'App',
   data () {
     return {
-      tree: Tree,
-      icons: {
-        closed: 'angle-up',
-        opened: 'angle-down',
-        default: {
-          prefix: 'fab',
-          iconName: 'accessible-icon'
-        }
-      }
+      tree: Tree
     }
   }
 }
