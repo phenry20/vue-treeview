@@ -4,7 +4,7 @@
       h1 Tree View
       p A simple treeview component for Vuejs Apps
     .body
-      tree-view(:tree="tree", :icons="icons")
+      tree-view(:tree.sync="tree", :icons="icons", :editable="true")
       router-view
     .footer
       h5 MIT Licensed | Copyright &copy; 2019 Liang-Shih Lin
