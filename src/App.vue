@@ -4,7 +4,11 @@
       h1 Tree View
       p A simple treeview component for Vuejs Apps
     .body
-      tree-view(:tree.sync="tree", :editable="true")
+      div
+        .expand-menu
+          a(@click="expand") Expand All
+          a(@click="collapse") Collapse All
+        tree-view(:tree.sync="tree", :editable="true", :expanded="expanded")
       router-view
     .footer
       h5 MIT Licensed | Copyright &copy; 2019 Liang-Shih Lin
@@ -18,7 +22,18 @@ export default {
   name: 'App',
   data () {
     return {
-      tree: Tree
+      tree: Tree,
+      expanded: true
+    }
+  },
+  methods: {
+    collapse () {
+      this.expanded = false
+      console.log('[Collapse] Expanded:', this.expanded)
+    },
+    expand () {
+      this.expanded = true
+      console.log('[Expand] Expanded:', this.expanded)
     }
   }
 }
@@ -70,4 +85,16 @@ body
     grid-template-rows: auto
     grid-template-columns: 1fr 1fr
     grid-column-gap: 2em
+
+    .expand-menu
+      color: orange
+      cursor: pointer
+      display: flex
+      justify-content: space-between
+      margin-bottom: 1em
+
+      a:link, a:active, a:visited
+        text-decoration: none
+      a:hover
+        text-decoration: underline
 </style>

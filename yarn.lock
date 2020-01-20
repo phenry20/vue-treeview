@@ -910,7 +910,7 @@
     postcss "^7.0.0"
 
 "@ll931217/vue-treeview@../master":
-  version "0.2.1"
+  version "0.2.2"
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.14"
     "@fortawesome/free-brands-svg-icons" "^5.7.2"
